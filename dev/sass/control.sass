@@ -1,0 +1,68 @@
+// IMPORTS /////////////////////////////////////////////////////////////////////
+
+@import "partials/_variables.sass"
+@import "partials/_core.sass"
+
+// COMMON ELEMENTS /////////////////////////////////////////////////////////////
+
+body
+    padding: $n
+
+// EMT PICKER //////////////////////////////////////////////////////////////////
+
+.emt
+    display: flex
+    flex-direction: column
+
+    h2
+        font-size: $t*1.5
+        margin-bottom: $n*0.5
+
+    .select
+        border: $n*0.25 solid $base01
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: flex-start
+        flex-wrap: wrap
+        padding: $n*0.25 $n*0.25
+        @media (max-width: $max)
+            flex-direction: column
+            align-items: stretch
+
+        a
+            color: inherit
+            cursor: pointer
+            display: block
+            flex-basis: 50%
+            padding: 0 ($n * 0.5)
+            @media (max-width: $max)
+                flex-basis: 100%
+
+            &:hover
+                background: $base02
+                color: $base06
+                text-decoration: none
+
+        .empty
+            color: $base03
+
+        .current
+            // border-bottom: 2px solid $base0b
+            // margin-bottom: -2px
+            background: $base01
+            color: $base0b
+
+// BOTTOM BAR THING ////////////////////////////////////////////////////////////
+
+#bar
+    background: $base00
+    color: $base03
+    margin-top: $n
+    right: 0
+    bottom: 0
+    left: 0
+    text-align: center
+
+    span
+        margin: 0 ($n * 0.5)
