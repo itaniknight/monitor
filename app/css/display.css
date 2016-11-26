@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
     font-family: "Merriweather Sans";
     font-weight: normal;
@@ -36,23 +35,70 @@ a {
         text-decoration: underline; }
 
 .container {
+    margin: 36px auto;
+    max-width: 960px;
+    padding: 0 36px; }
+
+* {
+    transition: 0.0s all !important;
+    pointer-events: none !important; }
+
+#app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+
+.emt .container {
+    height: 100%;
     margin: 0 auto;
-    max-width: 960px; }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
 
-body:before {
-    background: url("http://localhost:8000/image.php?height=40&hex=ffffff") repeat top left;
-    content: " ";
-    opacity: 0.5;
-    pointer-events: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999; }
+.emt img {
+    max-width: 100%; }
 
-body:before {
-    display: none; }
+.output .container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 36px; }
+    @media (max-width: 540px) {
+        .output .container {
+            flex-direction: column;
+            flex-wrap: nowrap; } }
 
-body:active:before {
-    display: none; }
+.output .block {
+    display: flex;
+    flex-direction: column;
+    min-width: 25%;
+    text-align: center;
+    opacity: 0;
+    margin-bottom: 36px; }
+    .output .block.active {
+        opacity: 1; }
+    .output .block .value, .output .block .label {
+        font-size: 22.5px;
+        height: 36px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis; }
+    .output .block[index="0"] .label {
+        color: #cc6666; }
+    .output .block[index="1"] .label {
+        color: #de935f; }
+    .output .block[index="2"] .label {
+        color: #f0c674; }
+    .output .block[index="3"] .label {
+        color: #b5bd68; }
+    .output .block[index="4"] .label {
+        color: #8abeb7; }
+    .output .block[index="5"] .label {
+        color: #81a2be; }
+    .output .block[index="6"] .label {
+        color: #b294bb; }
+    .output .block[index="7"] .label {
+        color: #a3685a; }

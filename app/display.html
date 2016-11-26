@@ -7,12 +7,17 @@
   </head>
   <body>
     <section id="app">
-      <div class="container">
-        <div class="emt">
-          <h2>EMT</h2><img v-bind:src="core.emt_current"><span>{{core.emt_current}}</span>
+      <div class="emt">
+        <div class="container">
+          <h2>EMT</h2><img v-bind:src="core.emt_current">
         </div>
-        <div class="input">
-          <div class="block" v-for="(item, index) in core.input"><span class="label">{{item.name}}</span><span class="value">{{item.data}}</span></div>
+      </div>
+      <div class="output">
+        <div class="container">
+          <div class="block" v-for="(item, index) in core.input" v-bind:id="item.id" v-bind:index="index" v-bind:class="{active: item.data}">
+            <div class="label">{{item.name}}</div>
+            <div class="value">{{item.data}}</div>
+          </div>
         </div>
       </div>
     </section>

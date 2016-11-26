@@ -39,6 +39,6 @@ input = [
 
 core = {
     emt: emt,
-    emt_current: null,
+    emt_current: "img/xx.png",
     input: input
 }

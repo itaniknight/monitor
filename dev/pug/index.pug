@@ -11,6 +11,9 @@ html
 
     body
 
+        noscript
+            p This application requires javascript to run.
+
         section#app: div.container
 
             div.controls
@@ -38,7 +41,8 @@ html
                         v-bind:index="index"
                         v-bind:id="item.id"
                     )
-                        label(v-bind:for="item.id") {{item.name}}
+                        label(v-if="item.id != 'yy'" v-bind:for="item.id") {{item.name}}
+                        input(v-else v-model="item.name")
                         input(v-model="item.data")
 
         section#bar: div.container

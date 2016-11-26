@@ -1,2 +1,111 @@
 @import "partials/_variables.sass"
 @import "partials/_core.sass"
+
+// CORE STYLES /////////////////////////////////////////////////////////////////
+
+*
+    transition: 0.0s all !important
+    pointer-events: none !important
+
+#app
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+// EMT DISPLAY /////////////////////////////////////////////////////////////////
+
+.emt
+
+    .container
+        // background: orange
+        height: 100%
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+    img
+        max-width: 100%
+
+// OUTPUT BOXES ////////////////////////////////////////////////////////////////
+
+.output
+
+    .container
+        // background: yellow
+        margin: 0 auto
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        padding-top: $n
+        @media (max-width: $max)
+            flex-direction: column
+            flex-wrap: nowrap
+
+    .block
+        display: flex
+        flex-direction: column
+        min-width: 25%
+        text-align: center
+        opacity: 0
+        margin-bottom: $n
+
+        &.active
+            opacity: 1
+
+        .value, .label
+            font-size: $t*1.25
+            height: $n
+            overflow: hidden
+            white-space: nowrap
+            text-overflow: ellipsis
+
+        &[index="0"]
+            $hue: $base08
+
+            .label
+                color: $hue
+
+        &[index="1"]
+            $hue: $base09
+
+            .label
+                color: $hue
+
+        &[index="2"]
+            $hue: $base0a
+
+            .label
+                color: $hue
+
+        &[index="3"]
+            $hue: $base0b
+
+            .label
+                color: $hue
+
+        &[index="4"]
+            $hue: $base0c
+
+            .label
+                color: $hue
+
+        &[index="5"]
+            $hue: $base0d
+
+            .label
+                color: $hue
+
+        &[index="6"]
+            $hue: $base0e
+
+            .label
+                color: $hue
+
+        &[index="7"]
+            $hue: $base0f
+
+            .label
+                color: $hue

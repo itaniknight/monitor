@@ -1,3 +1,9 @@
+// EVENT LISTENER //////////////////////////////////////////////////////////////
+
+$(window).on("storage", function() {
+    app.core = getLocal()
+})
+
 // VUE.JS //////////////////////////////////////////////////////////////////////
 
 app = new Vue({
@@ -5,10 +11,4 @@ app = new Vue({
     data: {
         core: getLocal()
     }
-})
-
-// EVENT LISTENER //////////////////////////////////////////////////////////////
-
-$(window).on("storage", function() {
-    app.core = getLocal()
 })

@@ -6,6 +6,9 @@
     <title>Control Screen - Patient Monitor</title>
   </head>
   <body>
+    <noscript>
+      <p>This application requires javascript to run.</p>
+    </noscript>
     <section id="app">
       <div class="container">
         <div class="controls">
@@ -20,7 +23,8 @@
           <h2>Patient Status</h2>
           <div class="inputs">
             <div class="combo" v-for="(item, index) in core.input" v-bind:index="index" v-bind:id="item.id">
-              <label v-bind:for="item.id">{{item.name}}</label>
+              <label v-if="item.id != 'yy'" v-bind:for="item.id">{{item.name}}</label>
+              <input v-else v-model="item.name">
               <input v-model="item.data">
             </div>
           </div>
