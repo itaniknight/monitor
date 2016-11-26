@@ -5,12 +5,11 @@
 
 // COMMON ELEMENTS /////////////////////////////////////////////////////////////
 
-body
-    padding-bottom: $n*0.5
-
 h2
-    // padding: 0 $n
     margin-bottom: $n
+
+.container
+    margin: $n auto 0
 
 // FLEX BOXES //////////////////////////////////////////////////////////////////
 
@@ -61,6 +60,9 @@ input
     display: flex
     flex-wrap: wrap
     margin-right: -$n
+    @media (max-width: $max)
+        align-items: stretch
+        flex-direction: column
 
 .combo
     border: $n*0.25 solid $base05
@@ -70,6 +72,7 @@ input
     margin-bottom: $n
     padding: $n*0.25
     flex: 1
+    min-width: 40%
 
     // I wanted to do this automatically but sass complained for weird reasons.
 
@@ -140,16 +143,21 @@ input
 // BOTTOM BAR THING ////////////////////////////////////////////////////////////
 
 #bar
-    background: mix($base00, black)
-    color: $base03
-    margin-top: $n
-    font-size: $t*0.75
     position: fixed
-    right: 0
-    bottom: 0
-    left: 0
-    text-align: center
-    padding: $n*0.25 0
+    top: $n*0.5
+    right: $n*0.25
+    opacity: 0.5
+    text-align: right
+    display: flex
+    justify-content: flex-end
+    flex-wrap: wrap
+
+    &:hover
+        opacity: 1
+
+    a
+        background: mix(black, $base00)
+        padding: $n*0.25 $n*0.5
 
     span
         margin: 0 ($n * 0.5)

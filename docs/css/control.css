@@ -39,11 +39,11 @@ a {
     max-width: 960px;
     padding: 0 36px; }
 
-body {
-    padding-bottom: 18px; }
-
 h2 {
     margin-bottom: 36px; }
+
+.container {
+    margin: 36px auto 0; }
 
 .flex {
     border: 9px solid #282a2e;
@@ -52,7 +52,7 @@ h2 {
     flex-wrap: wrap;
     margin-bottom: 36px;
     padding: 9px; }
-    @media (max-width: 540px) {
+    @media (max-width: 640px) {
         .flex {
             align-items: stretch;
             flex-direction: column; } }
@@ -86,6 +86,10 @@ input {
     display: flex;
     flex-wrap: wrap;
     margin-right: -36px; }
+    @media (max-width: 640px) {
+        .inputs {
+            align-items: stretch;
+            flex-direction: column; } }
 
 .combo {
     border: 9px solid #c5c8c6;
@@ -94,7 +98,8 @@ input {
     margin-right: 36px;
     margin-bottom: 36px;
     padding: 9px;
-    flex: 1; }
+    flex: 1;
+    min-width: 40%; }
     .combo[index="0"] {
         border-color: #493132; }
         .combo[index="0"] label {
@@ -137,15 +142,18 @@ input {
             padding: 0 18px; }
 
 #bar {
-    background: #0f1011;
-    color: #969896;
-    margin-top: 36px;
-    font-size: 13.5px;
     position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    padding: 9px 0; }
+    top: 18px;
+    right: 9px;
+    opacity: 0.5;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap; }
+    #bar:hover {
+        opacity: 1; }
+    #bar a {
+        background: #0f1011;
+        padding: 9px 18px; }
     #bar span {
         margin: 0 18px; }
