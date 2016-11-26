@@ -8,50 +8,134 @@
 body
     padding: $n
 
-// EMT PICKER //////////////////////////////////////////////////////////////////
+h2
+    // padding: 0 $n
+    margin: 0 $n $n
 
-.emt
+// FLEX BOXES //////////////////////////////////////////////////////////////////
+
+.flex
+    border: $n*0.25 solid $base01
     display: flex
-    flex-direction: column
+    flex-direction: row
+    flex-wrap: wrap
+    margin-bottom: $n
+    padding: $n*0.25
+    @media (max-width: $max)
+        align-items: stretch
+        flex-direction: column
 
-    h2
-        font-size: $t*1.5
-        margin-bottom: $n*0.5
+    a
+        display: block
+        flex-basis: 50%
+        padding: 0 $n*0.5
 
-    .select
-        border: $n*0.25 solid $base01
-        display: flex
-        flex-direction: row
-        justify-content: flex-start
-        align-items: flex-start
-        flex-wrap: wrap
-        padding: $n*0.25 $n*0.25
-        @media (max-width: $max)
-            flex-direction: column
-            align-items: stretch
-
-        a
-            color: inherit
-            cursor: pointer
-            display: block
-            flex-basis: 50%
-            padding: 0 ($n * 0.5)
-            @media (max-width: $max)
-                flex-basis: 100%
-
-            &:hover
-                background: $base02
-                color: $base06
-                text-decoration: none
-
-        .empty
+        &#xx
             color: $base03
 
-        .current
-            // border-bottom: 2px solid $base0b
-            // margin-bottom: -2px
+        &.current
             background: $base01
             color: $base0b
+
+        &:hover
+            background: $base02
+            color: $base06
+            text-decoration: none
+
+// INPUTS //////////////////////////////////////////////////////////////////////
+
+input
+    border: 0
+    background: $base01
+    color: inherit
+    font: inherit
+    height: $n
+    padding: 0 $n*0.5
+    outline: 0
+
+    &:focus
+        background: $base02
+        color: $base06
+
+.inputs
+    display: flex
+    flex-wrap: wrap
+    margin-right: -$n
+
+.combo
+    border: $n*0.25 solid $base05
+    display: flex
+    flex-direction: column
+    margin-right: $n
+    margin-bottom: $n
+    padding: $n*0.25
+    flex: 1
+
+    // I wanted to do this automatically but sass complained for weird reasons.
+
+    &[index="0"]
+        $hue: $base08
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="1"]
+        $hue: $base09
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="2"]
+        $hue: $base0a
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="3"]
+        $hue: $base0b
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="4"]
+        $hue: $base0c
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="5"]
+        $hue: $base0d
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="6"]
+        $hue: $base0e
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
+
+    &[index="7"]
+        $hue: $base0f
+        border-color: mix($base00, $hue, 75%)
+
+        label
+            color: $hue
+            padding: 0 $n*0.5
 
 // BOTTOM BAR THING ////////////////////////////////////////////////////////////
 

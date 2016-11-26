@@ -18,6 +18,11 @@ html
                 img(v-bind:src="core.emt_current")
                 span {{core.emt_current}}
 
+            div.input
+                div.block(v-for="(item, index) in core.input")
+                    span.label {{item.name}}
+                    span.value {{item.data}}
+
         //- external scripts
         script(src="js/jquery-3.1.1.js")
         script(src="js/lodash.min.js")

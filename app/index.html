@@ -9,16 +9,17 @@
     <section id="app">
       <div class="container">
         <div class="controls">
-          <h2>Controls</h2><a v-on:click="resetEverything">Reset everything</a><a target="_blank" href="display.html">Open display</a>
+          <h2>Controls</h2>
+          <div class="flex"><a v-on:click="resetEverything">Reset everything</a><a target="_blank" href="display.html">Open display</a></div>
         </div>
         <div class="emt">
           <h2>EMT Display</h2>
-          <div class="select"><a v-for="link in core.emt" v-bind:value="link.src" v-bind:id="link.id" v-bind:class="{ current: link.current }" v-on:click="updateEMT($event)">{{link.name}}</a></div>
+          <div class="flex"><a v-for="link in core.emt" v-bind:value="link.src" v-bind:id="link.id" v-bind:class="{ current: link.current }" v-on:click="updateEMT($event)">{{link.name}}</a></div>
         </div>
         <div class="input">
           <h2>Patient Status</h2>
           <div class="inputs">
-            <div class="input" v-for="item in core.input" v-bind:id="item.id">
+            <div class="combo" v-for="(item, index) in core.input" v-bind:index="index" v-bind:id="item.id">
               <label v-bind:for="item.id">{{item.name}}</label>
               <input v-model="item.data">
             </div>

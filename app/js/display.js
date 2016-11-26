@@ -3,7 +3,7 @@
 app = new Vue({
     el: "#app",
     data: {
-        core: core
+        core: getLocal()
     }
 })
 

@@ -15,12 +15,13 @@ html
 
             div.controls
                 h2 Controls
-                a(v-on:click="resetEverything") Reset everything
-                a(target="_blank" href="display.html") Open display
+                div.flex
+                    a(v-on:click="resetEverything") Reset everything
+                    a(target="_blank" href="display.html") Open display
 
             div.emt
                 h2 EMT Display
-                div.select
+                div.flex
                     a(
                         v-for="link in core.emt"
                         v-bind:value="link.src"
@@ -32,7 +33,11 @@ html
             div.input
                 h2 Patient Status
                 div.inputs
-                    div.input(v-for="item in core.input" v-bind:id="item.id")
+                    div.combo(
+                        v-for="(item, index) in core.input"
+                        v-bind:index="index"
+                        v-bind:id="item.id"
+                    )
                         label(v-bind:for="item.id") {{item.name}}
                         input(v-model="item.data")
 

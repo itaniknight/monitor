@@ -11,6 +11,9 @@
         <div class="emt">
           <h2>EMT</h2><img v-bind:src="core.emt_current"><span>{{core.emt_current}}</span>
         </div>
+        <div class="input">
+          <div class="block" v-for="(item, index) in core.input"><span class="label">{{item.name}}</span><span class="value">{{item.data}}</span></div>
+        </div>
       </div>
     </section>
     <script src="js/jquery-3.1.1.js"></script>
