@@ -2,6 +2,10 @@
 
 createBackup(core)
 
+if (getLocal() === null) {
+    setLocal(core)
+}
+
 // VUE.JS //////////////////////////////////////////////////////////////////////
 
 app = new Vue({

@@ -16,12 +16,6 @@ html
 
         section#app: div.container
 
-            div.controls
-                h2 Controls
-                div.flex
-                    a(v-on:click="resetEverything") Reset everything
-                    a(target="_blank" href="display.html") Open display
-
             div.emt
                 h2 EMT Display
                 div.flex
@@ -45,13 +39,11 @@ html
                         input(v-else v-model="item.name")
                         input(v-model="item.data")
 
-        section#bar: div.container
+        section#bar
 
             a(onclick="app.resetEverything()") Reset everything
             span *
-            a.display(target="_blank" href="display.html") Open Display
-            span *
-            a(href="http://itaniknight.github.io/monitor/") Latest Version
+            a.display(target="_blank" href="display.html") Open display
             span *
             a(href="http://github.com/itaniknight/monitor/") GitHub
 

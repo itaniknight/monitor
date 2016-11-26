@@ -39,6 +39,9 @@ a {
     max-width: 960px;
     padding: 0 36px; }
 
+body {
+    padding-bottom: 18px; }
+
 h2 {
     margin-bottom: 36px; }
 
@@ -134,12 +137,15 @@ input {
             padding: 0 18px; }
 
 #bar {
-    background: #1d1f21;
+    background: #0f1011;
     color: #969896;
     margin-top: 36px;
+    font-size: 13.5px;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
-    text-align: center; }
+    text-align: center;
+    padding: 9px 0; }
     #bar span {
         margin: 0 18px; }
