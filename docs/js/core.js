@@ -19,11 +19,14 @@ function restoreBackup() {
 // VARIABLES ///////////////////////////////////////////////////////////////////
 
 emt = [
-    { id: "xx", src: "img/xx.png", name: "Empty", current: true },
-    { id: "as", src: "img/as.png", name: "Asystole", current: false },
-    { id: "af", src: "img/af.png", name: "Atrial Fibrillation", current: false },
-    { id: "sr", src: "img/sr.png", name: "Sinus Rhythm", current: false },
-    { id: "vf", src: "img/vf.png", name: "Ventricular Fibrillation", current: false },
+    { id: "xx", src: "img/xx.png",  name: "Empty", current: true },
+    { id: "af", src: "img/af.png",  name: "Atrial Fibrillation", current: false },
+    { id: "as", src: "img/as.png",  name: "Asystole", current: false },
+    { id: "sr", src: "img/sr.png",  name: "Sinus Rhythm", current: false },
+    { id: "stc", src: "img/st.png", name: "Sinus Tachycardia", current: false },
+    { id: "ste", src: "img/se.png", name: "ST Elevation", current: false },
+    { id: "vf", src: "img/vf.png",  name: "Ventricular Fibrillation", current: false },
+    { id: "vt", src: "img/vt.png",  name: "Ventricular Tachycardia", current: false },
 ]
 
 input = [

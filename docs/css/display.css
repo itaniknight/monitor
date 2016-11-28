@@ -49,7 +49,7 @@ a {
     flex-direction: column;
     justify-content: center; }
 
-.emt .container {
+.ecg .container {
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -57,7 +57,7 @@ a {
     align-items: center;
     justify-content: center; }
 
-.emt img {
+.ecg img {
     max-width: 100%; }
 
 .output .container {
