@@ -28,7 +28,9 @@ app = new Vue({
         },
         updateEMT: function(event) {
             target = event.path[0].getAttribute("value")
-            app.core.emt_current = target
+            type = event.path[0].getAttribute("type")
+            app.core.emt_current.src = target
+            app.core.emt_current.type = type
             app.core.emt.forEach(function(el) {
                 el.current = (el.src === target)
             })
@@ -36,5 +38,3 @@ app = new Vue({
         }
     }
 })
-
-// console.log(app.core.emt_current)

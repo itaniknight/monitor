@@ -7,8 +7,12 @@
   </head>
   <body>
     <section id="app">
-      <div class="emt">
-        <div class="container"><img v-bind:src="core.emt_current"></div>
+      <div class="ecg">
+        <div class="container">
+          <video v-if="core.emt_current.type" autoplay loop>
+            <source v-bind:src="core.emt_current.src" type="video/mp4">
+          </video><img v-else v-bind:src="core.emt_current.src">
+        </div>
       </div>
       <div class="output">
         <div class="container">

@@ -13,9 +13,12 @@ html
 
         section#app
 
-            div.emt: div.container
-                img(v-bind:src="core.emt_current")
+            //- ECG TRACES
+            div.ecg: div.container
+                video(v-if="core.emt_current.type" autoplay loop): source(v-bind:src="core.emt_current.src" type="video/mp4")
+                img(v-else v-bind:src="core.emt_current.src")
 
+            //- STAT DISPLAY
             div.output: div.container
                 div.block(
                     v-for="(item, index) in core.input"

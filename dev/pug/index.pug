@@ -22,6 +22,7 @@ html
                     a(
                         v-for="link in core.emt"
                         v-bind:value="link.src"
+                        v-bind:type="link.video"
                         v-bind:id="link.id"
                         v-bind:class="{ current: link.current }"
                         v-on:click="updateEMT($event)"

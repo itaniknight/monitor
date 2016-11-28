@@ -27,6 +27,7 @@ emt = [
     { id: "ste", src: "img/se.png", name: "ST Elevation", current: false },
     { id: "vf", src: "img/vf.png",  name: "Ventricular Fibrillation", current: false },
     { id: "vt", src: "img/vt.png",  name: "Ventricular Tachycardia", current: false },
+    // { id: "xxvid", src: "mp4/sinus-rhythm.mp4", name: "Sinus Rhythm (Video)", current: false, video: true }
 ]
 
 input = [
@@ -42,6 +43,9 @@ input = [
 
 core = {
     emt: emt,
-    emt_current: "img/xx.png",
+    emt_current: {
+        src: "img/xx.png",
+        type: "image"
+    },
     input: input
 }
