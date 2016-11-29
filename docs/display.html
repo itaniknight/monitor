@@ -15,7 +15,7 @@
       </div>
       <div class="container status">
         <div class="row content">
-          <div class="col-xs-12 col-sm-3" v-for="(item, index) in core.input">
+          <div class="col-xs-12 col-sm-6 col-md-3" v-for="(item, index) in core.input">
             <div class="block" v-bind:id="index" v-bind:class="['item-' + (index + 1)]" v-bind:visible="item.data ? true : false">
               <div class="label">{{ item.name }}</div>
               <div class="value">{{ item.data ? item.data : '&nbsp;' }}</div>

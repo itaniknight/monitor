@@ -21,7 +21,7 @@ html
 
             .container.status
                 .row.content
-                    .col-xs-12.col-sm-3(v-for="(item, index) in core.input")
+                    .col-xs-12.col-sm-6.col-md-3(v-for="(item, index) in core.input")
                         .block(v-bind:id="index" v-bind:class="['item-' + (index + 1)]" v-bind:visible="item.data ? true : false")
                             .label {{ item.name }}
                             .value {{ item.data ? item.data : '&nbsp;' }}
