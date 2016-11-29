@@ -1,7 +1,0 @@
-{
-    "scripts": {
-        "pug": "pug -w dev/pug -o docs -P",
-        "sass": "node-sass -w dev/sass -o docs/css -r --output-style nested --indent-type space --indent-width 4 --error-bell",
-        "sync": "browser-sync start -s docs -f docs --reload-delay 250 --reload-debounce 250 --no-open --no-online --no-ghost-mode"
-    }
-}
