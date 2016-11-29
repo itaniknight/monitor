@@ -10,8 +10,7 @@ To update the display, click the links on the display panel, and type things in 
 
 # Credits
 
-- ECG images drawn by Chris Robinson
-
+- ECG images drawn by **Chris Robinson**
 - Base16's **Tomorrow Night** colours: https://chriskempson.github.io/base16/
 - Just the grid from **Bootstrap 4**: https://v4-alpha.getbootstrap.com/
 - Probably didn't need **jQuery**: https://vuejs.org/
