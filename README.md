@@ -13,7 +13,7 @@ To update the display, click the links on the display panel, and type things in 
 - ECG images drawn by **Chris Robinson**
 - Base16's **Tomorrow Night** colours: https://chriskempson.github.io/base16/
 - Just the grid from **Bootstrap 4**: https://v4-alpha.getbootstrap.com/
-- Probably didn't need **jQuery**: https://vuejs.org/
+- Probably didn't need **jQuery**: https://jquery.com/
 - Debounce function from **Lodash**: https://lodash.com/
 - For everything else, **Vue.js**: https://vuejs.org/
 
