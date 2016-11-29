@@ -33,7 +33,6 @@
 .output
 
     .container
-        // background: yellow
         margin: 0 auto
         display: flex
         align-items: center
@@ -46,17 +45,19 @@
     .block
         display: flex
         flex-direction: column
-        min-width: 25%
+        width: 25%
         text-align: center
         opacity: 0
         margin-bottom: $n
+        @media (max-width: $max)
+            width: 100%
 
         &.active
             opacity: 1
 
         .value, .label
-            font-size: $t*1.25
-            height: $n
+            font-size: $t*1.75
+            line-height: $n*1.5
             overflow: hidden
             white-space: nowrap
             text-overflow: ellipsis
