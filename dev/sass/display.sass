@@ -1,11 +1,10 @@
-@import "partials/_variables.sass"
-@import "partials/_core.sass"
+@import partials/_variables.sass
+@import partials/_core.sass
 
-// CORE STYLES /////////////////////////////////////////////////////////////////
+//  CORE STYLES  ///////////////////////////////////////////////////////////////
 
-*
-    transition: 0.0s all !important
-    pointer-events: none !important
+img
+    max-width: 100%
 
 #app
     min-height: 100vh
@@ -13,94 +12,22 @@
     flex-direction: column
     justify-content: center
 
-// EMT DISPLAY /////////////////////////////////////////////////////////////////
+//  STATUS  ////////////////////////////////////////////////////////////////////
 
-.ecg
-
-    .container
-        height: 100%
-        margin: 0 auto
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-
-    img
-        max-width: 100%
-
-// OUTPUT BOXES ////////////////////////////////////////////////////////////////
-
-.output
-
-    .container
-        margin: 0 auto
-        display: flex
-        align-items: center
-        flex-wrap: wrap
-        padding-top: $n
+.status
+    font-size: $t / 3 * 4
+    line-height: $n / 3 * 4
+    margin-top: $n
+    text-align: center
 
     .block
-        display: flex
-        flex-direction: column
-        width: 25%
-        text-align: center
         opacity: 0
-        margin-bottom: $n
+        margin-top: $n
 
-        &.active
+        &[visible]
             opacity: 1
 
-        .value, .label
-            font-size: $t*1.75
-            line-height: $n*1.5
-            overflow: hidden
-            white-space: nowrap
-            text-overflow: ellipsis
-
-        &[index="0"]
-            $hue: $base08
-
+    @for $i from 1 through 8
+        .block.item-#{$i}
             .label
-                color: $hue
-
-        &[index="1"]
-            $hue: $base09
-
-            .label
-                color: $hue
-
-        &[index="2"]
-            $hue: $base0a
-
-            .label
-                color: $hue
-
-        &[index="3"]
-            $hue: $base0b
-
-            .label
-                color: $hue
-
-        &[index="4"]
-            $hue: $base0c
-
-            .label
-                color: $hue
-
-        &[index="5"]
-            $hue: $base0d
-
-            .label
-                color: $hue
-
-        &[index="6"]
-            $hue: $base0e
-
-            .label
-                color: $hue
-
-        &[index="7"]
-            $hue: $base0f
-
-            .label
-                color: $hue
+                color: map-get($hue, $i)

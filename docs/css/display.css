@@ -12,6 +12,7 @@
   src: url("../fonts/MerriweatherSans-Italic.ttf"); }
 * {
   box-sizing: border-box;
+  font: inherit;
   margin: 0;
   padding: 0;
   position: relative; }
@@ -30,12 +31,15 @@ a {
   a:hover {
     text-decoration: underline; }
 
+h1, h2, h3 {
+  font-size: 24px;
+  font-weight: bold; }
+
 label, input {
   display: block; }
 
-* {
-  transition: 0s all !important;
-  pointer-events: none !important; }
+img {
+  max-width: 100%; }
 
 #app {
   min-height: 100vh;
@@ -43,50 +47,29 @@ label, input {
   flex-direction: column;
   justify-content: center; }
 
-.ecg .container {
-  height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-.ecg img {
-  max-width: 100%; }
-
-.output .container {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  padding-top: 30px; }
-.output .block {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  text-align: center;
-  opacity: 0;
-  margin-bottom: 30px; }
-  .output .block.active {
-    opacity: 1; }
-  .output .block .value, .output .block .label {
-    font-size: 31.5px;
-    line-height: 45px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
-  .output .block[index="0"] .label {
+.status {
+  font-size: 24px;
+  line-height: 40px;
+  margin-top: 30px;
+  text-align: center; }
+  .status .block {
+    opacity: 0;
+    margin-top: 30px; }
+    .status .block[visible] {
+      opacity: 1; }
+  .status .block.item-1 .label {
     color: #cc6666; }
-  .output .block[index="1"] .label {
+  .status .block.item-2 .label {
     color: #de935f; }
-  .output .block[index="2"] .label {
+  .status .block.item-3 .label {
     color: #f0c674; }
-  .output .block[index="3"] .label {
+  .status .block.item-4 .label {
     color: #b5bd68; }
-  .output .block[index="4"] .label {
+  .status .block.item-5 .label {
     color: #8abeb7; }
-  .output .block[index="5"] .label {
+  .status .block.item-6 .label {
     color: #81a2be; }
-  .output .block[index="6"] .label {
+  .status .block.item-7 .label {
     color: #b294bb; }
-  .output .block[index="7"] .label {
+  .status .block.item-8 .label {
     color: #a3685a; }

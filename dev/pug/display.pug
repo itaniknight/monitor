@@ -5,6 +5,7 @@ html
 
         meta(charset="utf-8")
 
+        link(rel="stylesheet" href="css/bootstrap-grid.min.css")
         link(rel="stylesheet" href="css/display.css")
 
         title Patient Monitor
@@ -13,21 +14,17 @@ html
 
         section#app
 
-            //- ECG TRACES
-            div.ecg: div.container
-                video(v-if="core.emt_current.type" autoplay loop): source(v-bind:src="core.emt_current.src" type="video/mp4")
-                img(v-else v-bind:src="core.emt_current.src")
+            .container.ecg
+                .row.content
+                    .col.col-xs-12
+                        img(v-bind:src="core.emt_current.src")
 
-            //- STAT DISPLAY
-            div.output: div.container
-                div.block(
-                    v-for="(item, index) in core.input"
-                    v-bind:id="item.id"
-                    v-bind:index="index"
-                    v-bind:class="{active: item.data}"
-                )
-                    div.label {{item.name}}
-                    div.value {{item.data}}
+            .container.status
+                .row.content
+                    .col-xs-12.col-sm-3(v-for="(item, index) in core.input")
+                        .block(v-bind:id="index" v-bind:class="['item-' + (index + 1)]" v-bind:visible="item.data ? true : false")
+                            .label {{ item.name }}
+                            .value {{ item.data ? item.data : '&nbsp;' }}
 
         //- external scripts
         script(src="js/jquery-3.1.1.js")

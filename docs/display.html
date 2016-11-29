@@ -2,23 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/display.css">
     <title>Patient Monitor</title>
   </head>
   <body>
     <section id="app">
-      <div class="ecg">
-        <div class="container">
-          <video v-if="core.emt_current.type" autoplay loop>
-            <source v-bind:src="core.emt_current.src" type="video/mp4">
-          </video><img v-else v-bind:src="core.emt_current.src">
+      <div class="container ecg">
+        <div class="row content">
+          <div class="col col-xs-12"><img v-bind:src="core.emt_current.src"></div>
         </div>
       </div>
-      <div class="output">
-        <div class="container">
-          <div class="block" v-for="(item, index) in core.input" v-bind:id="item.id" v-bind:index="index" v-bind:class="{active: item.data}">
-            <div class="label">{{item.name}}</div>
-            <div class="value">{{item.data}}</div>
+      <div class="container status">
+        <div class="row content">
+          <div class="col-xs-12 col-sm-3" v-for="(item, index) in core.input">
+            <div class="block" v-bind:id="index" v-bind:class="['item-' + (index + 1)]" v-bind:visible="item.data ? true : false">
+              <div class="label">{{ item.name }}</div>
+              <div class="value">{{ item.data ? item.data : '&nbsp;' }}</div>
+            </div>
           </div>
         </div>
       </div>
