@@ -1,33 +1,37 @@
-// IMPORTS /////////////////////////////////////////////////////////////////////
+//  IMPORTS  ///////////////////////////////////////////////////////////////////
 
-@import "partials/_variables.sass"
-@import "partials/_core.sass"
+@import partials/_variables.sass
+@import partials/_core.sass
 
-// COMMON ELEMENTS /////////////////////////////////////////////////////////////
+// @import "http://basehold.it/10/255/255/255/0.1"
 
-h2
-    margin-bottom: $n
+//  COMMON  ////////////////////////////////////////////////////////////////////
 
 .container
-    margin: $n auto 0
-
-// FLEX BOXES //////////////////////////////////////////////////////////////////
-
-.flex
-    border: $n*0.25 solid $base01
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
+    margin-top: $n
     margin-bottom: $n
-    padding: $n*0.25
-    @media (max-width: $max)
-        align-items: stretch
-        flex-direction: column
 
+.title h2
+    margin-bottom: $n
+
+input
+    border: 0
+    background: $base01
+    color: $base05
+    font: inherit
+    outline: 0
+    width: auto
+
+    &:focus
+        background: $base02
+        color: $base06
+
+//  ECG  ///////////////////////////////////////////////////////////////////////
+
+.ecg
     a
         display: block
-        flex-basis: 50%
-        padding: 0 $n*0.5
+        padding: ($n / 6) ($n / 2)
 
         &#xx
             color: $base03
@@ -41,125 +45,48 @@ h2
             color: $base06
             text-decoration: none
 
-// INPUTS //////////////////////////////////////////////////////////////////////
+//  STATUS  ////////////////////////////////////////////////////////////////////
 
-input
-    border: 0
-    background: $base01
-    color: inherit
-    font: inherit
-    height: $n
-    padding: 0 $n*0.5
-    outline: 0
-    width: 100%
-
-    &:focus
-        background: $base02
-        color: $base06
-
-.inputs
-    display: flex
-    flex-wrap: wrap
-    justify-content: center
-    margin-right: -$n
-    @media (max-width: $max)
-        align-items: stretch
+.status
+    .block
+        display: flex
         flex-direction: column
+        margin-bottom: $n
 
-.combo
-    border: $n*0.25 solid $base05
-    display: flex
-    flex-direction: column
-    margin-right: $n
-    margin-bottom: $n
-    padding: $n*0.25
-    flex: 1
-    flex-basis: 40%
+    input, label
+        padding: 0 ($n / 2)
 
-    // I wanted to do this automatically but sass complained for weird reasons.
+    @for $i from 1 through 8
+        .block.item-#{$i}
+            border: ($n / 6) solid mix(map-get($hue, $i), $base00, 25%)
+            padding: $n / 6
 
-    &[index="0"]
-        $hue: $base08
-        border-color: mix($base00, $hue, 75%)
+            .label
+                color: map-get($hue, $i)
 
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="1"]
-        $hue: $base09
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="2"]
-        $hue: $base0a
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="3"]
-        $hue: $base0b
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="4"]
-        $hue: $base0c
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="5"]
-        $hue: $base0d
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="6"]
-        $hue: $base0e
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-    &[index="7"]
-        $hue: $base0f
-        border-color: mix($base00, $hue, 75%)
-
-        label
-            color: $hue
-            padding: 0 $n*0.5
-
-// BOTTOM BAR THING ////////////////////////////////////////////////////////////
+//  BUTTON BAR  ////////////////////////////////////////////////////////////////
 
 #bar
+    background: mix($base00, black, 75%)
     position: fixed
-    top: $n*0.5
-    right: $n*0.25
+    bottom: 0
+    right: 0
+    left: 0
     opacity: 0.5
+    padding: $n/6 $n/2
     text-align: right
     display: flex
-    justify-content: flex-end
-    flex-wrap: wrap
 
     &:hover
         opacity: 1
 
     a
-        background: mix(black, $base00)
-        padding: $n*0.25 $n*0.5
+        display: block
+        flex: 1
+        padding: $n/6 0
+        text-align: center
 
-    span
-        margin: 0 ($n * 0.5)
+        &:hover
+            background: $base00
+            text-decoration: none
+            color: $base06

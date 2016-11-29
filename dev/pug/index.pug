@@ -5,6 +5,7 @@ html
 
         meta(charset="utf-8")
 
+        link(rel="stylesheet" href="css/bootstrap-grid.min.css")
         link(rel="stylesheet" href="css/control.css")
 
         title Control Screen - Patient Monitor
@@ -14,38 +15,30 @@ html
         noscript
             p This application requires javascript to run.
 
-        section#app: div.container
+        section#app
+            .container.ecg
+                .row.title
+                    .col-xs-12
+                        h2 ECG Display
+                .row.content
+                    .col-xs-12.col-sm-6.col-md-6.col-lg-4(v-for="link in core.emt")
+                        .block
+                            a(v-on:click="updateEMT($event)" v-bind:value="link.src" v-bind:type="link.video" v-bind:id="link.id" v-bind:class="{current: link.current}") {{link.name}}
 
-            div.ecg
-                h2 ECG Display
-                div.flex
-                    a(
-                        v-for="link in core.emt"
-                        v-bind:value="link.src"
-                        v-bind:type="link.video"
-                        v-bind:id="link.id"
-                        v-bind:class="{ current: link.current }"
-                        v-on:click="updateEMT($event)"
-                    ) {{link.name}}
-
-            div.input
-                h2 Patient Status
-                div.inputs
-                    div.combo(
-                        v-for="(item, index) in core.input"
-                        v-bind:index="index"
-                        v-bind:id="item.id"
-                    )
-                        label(v-if="item.id != 'yy'" v-bind:for="item.id") {{item.name}}
-                        input(v-else v-model="item.name")
-                        input(v-model="item.data")
+            .container.status
+                .row.title
+                    .col-xs-12
+                        h2 Patient Status
+                .row.content
+                    .col-xs-12.col-sm-6.col-md-4.col-lg-3(v-for="(item, index) in core.input" v-bind:class="item.id == 'yy' ? 'col-md-8' : ''")
+                        .block(v-bind:id="index" v-bind:class="'item-' + (index + 1)")
+                            label.label(v-if="item.id != 'yy'" v-bind:for="item.id") {{item.name}}
+                            input.label(v-else v-model="item.name")
+                            input.value(v-model="item.data" v-bind:name="item.id")
 
         section#bar
-
             a(onclick="app.resetEverything()") Reset everything
-            //- span *
             a.display(target="_blank" href="display.html") Open display
-            //- span *
             a(href="http://github.com/itaniknight/monitor/") GitHub
 
         //- external scripts
