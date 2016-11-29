@@ -22,7 +22,7 @@ body {
   color: #c5c8c6;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 18px;
-  line-height: 36px; }
+  line-height: 32px; }
 
 a {
   color: #81a2be;
@@ -32,9 +32,9 @@ a {
     text-decoration: underline; }
 
 .container {
-  margin: 36px auto;
+  margin: 32px auto;
   max-width: 1280px;
-  padding: 0 36px; }
+  padding: 0 32px; }
 
 * {
   transition: 0s all !important;
@@ -61,7 +61,7 @@ a {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 36px; }
+  padding-top: 32px; }
   @media (max-width: 640px) {
     .output .container {
       flex-direction: column;
@@ -72,7 +72,7 @@ a {
   width: 25%;
   text-align: center;
   opacity: 0;
-  margin-bottom: 36px; }
+  margin-bottom: 32px; }
   @media (max-width: 640px) {
     .output .block {
       width: 100%; } }
@@ -80,7 +80,7 @@ a {
     opacity: 1; }
   .output .block .value, .output .block .label {
     font-size: 31.5px;
-    line-height: 54px;
+    line-height: 48px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
